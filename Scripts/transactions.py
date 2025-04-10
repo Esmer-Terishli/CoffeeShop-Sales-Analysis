@@ -6,7 +6,7 @@ from datetime import datetime, timedelta, date
 fake = Faker()
 
 transaction_data = []
-num_rows = 200000
+num_rows = 1200000
 
 year_distribution = {
     2022: 0.20,
@@ -97,7 +97,11 @@ for year, count in year_counts.items():
 
         isflagwolt = random.choices(['NO', 'YES'], weights=[90, 10], k=1)[0]
 
-        product_id = random.randint(1, 9)
+        product_id = random.choices(
+            population=[1, 2, 3, 4, 5, 6, 7, 8, 9],
+            weights=[30, 18, 18, 5, 5.8, 5.8, 5.8, 5.8, 5.8],
+            k=1
+        )[0]
 
         transaction_data.append([ 
             transaction_date,

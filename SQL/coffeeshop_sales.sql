@@ -120,6 +120,104 @@ WHERE EXISTS (
     WHERE c_coffeeshops.coffeeshop_name = coffeeshop_sales.coffeeshop_name
 );
 
+--
+ALTER TABLE c_branches
+ADD branch_name VARCHAR2(510);
+
+UPDATE c_branches b
+SET branch_name = (
+    SELECT c.coffeeshop_name || ' - ' || b.branch
+    FROM c_coffeeshops c
+    WHERE c.coffeeshop_id = b.coffeeshop_id
+);
+
+--
+ALTER TABLE c_branches
+ADD (
+    latitude NUMBER(10, 6),
+    longitude NUMBER(10, 6)
+);
+
+
+-- 28 mall
+UPDATE c_branches
+SET latitude = 40.3777, longitude = 49.8540
+WHERE LOWER(branch) = '28 mall';
+
+-- 28-May
+UPDATE c_branches
+SET latitude = 40.3777, longitude = 49.8540
+WHERE LOWER(branch) = '28-may';
+
+-- Crescent mall
+UPDATE c_branches
+SET latitude = 40.3748, longitude = 49.8581
+WHERE LOWER(branch) = 'crescent mall';
+
+commit;
+
+-- Daniz mall
+UPDATE c_branches
+SET latitude = 40.3593, longitude = 49.8339
+WHERE LOWER(branch) = 'daniz mall';
+
+-- Elmlar Akademiyasi
+UPDATE c_branches
+SET latitude = 40.3745, longitude = 49.8270
+WHERE LOWER(branch) = 'elmlar akademiyası';
+
+-- Ganjlik
+UPDATE c_branches
+SET latitude = 40.3978, longitude = 49.8670
+WHERE LOWER(branch) = 'ganjlik';
+
+-- Ganjlik mall
+UPDATE c_branches
+SET latitude = 40.3985, longitude = 49.8663
+WHERE LOWER(branch) = 'ganjlik mall';
+
+-- Gara Garayev pr.61
+UPDATE c_branches
+SET latitude = 40.4160, longitude = 49.9525
+WHERE LOWER(branch) = 'gara garayev pr.61';
+
+-- Hazi Aslanov
+UPDATE c_branches
+SET latitude = 40.3743, longitude = 49.9582
+WHERE LOWER(branch) = 'hazi aslanov';
+
+-- Khatai
+UPDATE c_branches
+SET latitude = 40.3826, longitude = 49.8752
+WHERE LOWER(branch) = 'khatai';
+
+-- Targovy
+UPDATE c_branches
+SET latitude = 40.3723, longitude = 49.8516
+WHERE LOWER(branch) = 'targovy';
+
+
+-- Nariman Narimanov
+UPDATE c_branches
+SET latitude = 40.4017, longitude = 49.8671
+WHERE LOWER(branch) = 'nariman narimanov';
+
+-- Nizami
+UPDATE c_branches
+SET latitude = 40.3762, longitude = 49.8458
+WHERE LOWER(branch) = 'nizami';
+
+-- White City
+UPDATE c_branches
+SET latitude = 40.3759, longitude = 49.8788
+WHERE LOWER(branch) = 'white city';
+
+
+
+
+SELECT * FROM c_branches;
+
+commit;
 
 -- 3. c_branch_performance_sales
 CREATE TABLE c_branch_performance_sales (
@@ -682,3 +780,341 @@ commit;
 --DROP TABLE c_reviews;
 --DROP TABLE c_transactions;
 -------------------------------
+
+
+ALTER TABLE c_coffeeshops
+ADD (
+    first_branch VARCHAR2(255),
+    opened_year NUMBER(4),
+    initial_branch_count NUMBER
+);
+
+--1
+UPDATE c_coffeeshops
+SET 
+    first_branch = '28-May',
+    opened_year = 2018,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 1;
+
+--2
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Sahil',
+    opened_year = 2021,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 2;
+
+--3
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'White city',
+    opened_year = 2023,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 3;
+
+SELECT * FROM c_coffeeshops;
+
+--4
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Hazi Aslanov',
+    opened_year = 2022,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 4;
+
+--5
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Targovy',
+    opened_year = 2023,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 5;
+
+--6
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Daniz mall',
+    opened_year = 2025,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 6;
+
+--7
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Nizami',
+    opened_year = 2023,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 7;
+
+--8
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Targovy',
+    opened_year = 2024,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 8;
+
+--9
+UPDATE c_coffeeshops
+SET 
+    first_branch = '28 mall',
+    opened_year = 2015,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 9;
+
+--10
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'White city',
+    opened_year = 2023,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 10;
+
+--11
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Ganjlik',
+    opened_year = 2021,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 11;
+
+--12
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Ganjlik',
+    opened_year = 2023,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 12;
+
+--13
+UPDATE c_coffeeshops
+SET 
+    first_branch = '28-May',
+    opened_year = 2024,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 13;
+
+--14
+UPDATE c_coffeeshops
+SET 
+    first_branch = '28-May',
+    opened_year = 2024,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 14;
+
+--15
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Khatai',
+    opened_year = 2023,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 15;
+
+--16
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Ganjlik',
+    opened_year = 2022,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 16;
+
+--17
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Statistika',
+    opened_year = 2016,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 17;
+
+--18
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Targovy',
+    opened_year = 2020,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 18;
+
+--19
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Nariman Narimanov',
+    opened_year = 2023,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 19;
+
+--20
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Ganjlik',
+    opened_year = 2021,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 20;
+
+--21
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Nizami',
+    opened_year = 2023,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 21;
+
+--22
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Ganjlik',
+    opened_year = 2023,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 22;
+
+--23
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'White city',
+    opened_year = 2023,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 23;
+
+--24
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Nizami',
+    opened_year = 2020,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 24;
+
+--25
+UPDATE c_coffeeshops
+SET 
+    first_branch = '28-May',
+    opened_year = 2024,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 25;
+
+--26
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Nariman Narimanov',
+    opened_year = 2020,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 26;
+
+--27
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Nizami',
+    opened_year = 2020,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 27;
+
+--28
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Port Baku mall',
+    opened_year = 2014,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 28;
+
+--29
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Sea Breeze (LightHouse residence)',
+    opened_year = 2021,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 29;
+
+--30
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Gara Garayev pr.61',
+    opened_year = 2023,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 30;
+
+--31
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'White city',
+    opened_year = 2019,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 31;
+
+--32
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'White city',
+    opened_year = 2023,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 32;
+
+--33
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Targovy, 28 mall',
+    opened_year = 2014,
+    initial_branch_count = 2
+WHERE coffeeshop_id = 33;
+
+--34
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'White city',
+    opened_year = 2024,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 34;
+
+--35
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Targovy',
+    opened_year = 2021,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 35;
+
+--36
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Port Baku mall',
+    opened_year = 2015,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 36;
+
+--37
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Ganjlik mall, Targovy',
+    opened_year = 2018,
+    initial_branch_count = 2
+WHERE coffeeshop_id = 37;
+
+--38
+UPDATE c_coffeeshops
+SET 
+    first_branch = '28-May',
+    opened_year = 2022,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 38;
+
+--39
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Targovy',
+    opened_year = 2017,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 39;
+
+--40
+UPDATE c_coffeeshops
+SET 
+    first_branch = 'Ganjlik mall',
+    opened_year = 2024,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 40;
+
+--41
+UPDATE c_coffeeshops
+SET 
+    first_branch = '28-May',
+    opened_year = 2022,
+    initial_branch_count = 1
+WHERE coffeeshop_id = 41;
