@@ -68,8 +68,8 @@ WHERE branch_locations IS NULL;
 UPDATE c_coffeeshops
 SET most_popular_branch = 'Filial yoxdur'
 WHERE most_popular_branch IS NULL;
---
 
+--
 ALTER TABLE c_coffeeshops
 ADD locations_count NUMBER;
 --
@@ -81,9 +81,189 @@ SET locations_count =
         ELSE LENGTH(branch_locations) - LENGTH(REPLACE(branch_locations, ',', '')) + 2
     END;
 
-SELECT * FROM c_coffeeshops;
+
+--
+ALTER TABLE c_coffeeshops
+ADD logo_url VARCHAR2(500);
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/HjD8J5cG/42coffeeroasters.jpg'
+WHERE coffeeshop_id = 1;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/QN43XhLb/baristica.avif'
+WHERE coffeeshop_id = 2;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/DZQ1qxhv/beastcoffee.jpg'
+WHERE coffeeshop_id = 3;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/QNbpCYSS/belgian.jpg'
+WHERE coffeeshop_id = 4;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/c4Lfn7bW/bluebird.png'
+WHERE coffeeshop_id = 5;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/2575GM1K/brewmood.jpg'
+WHERE coffeeshop_id = 6;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/B6ZnVpDQ/cafebotanist.png'
+WHERE coffeeshop_id = 7;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/jqFSMzjt/chocolatier.webp'
+WHERE coffeeshop_id = 8;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/zvb5scf5/cinnabon.png'
+WHERE coffeeshop_id = 9;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/y6t7msfN/coffeedomingo.webp'
+WHERE coffeeshop_id = 10;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/W4NVN345/coffeego.jpg'
+WHERE coffeeshop_id = 11;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/cJFSrSg0/coffeehub.avif'
+WHERE coffeeshop_id = 12;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/DZD3PPPN/coffeelaross.jpg'
+WHERE coffeeshop_id = 13;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/8sg8qk3B/coffeelikeu.png'
+WHERE coffeeshop_id = 14;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/sfkvVYCK/coffeemode.png'
+WHERE coffeeshop_id = 15;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/MK1XXnWw/coffeenero.png'
+WHERE coffeeshop_id = 16;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/RZRFQ26b/coffeelea.png'
+WHERE coffeeshop_id = 17;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/br78p9Gn/coffeebar.png'
+WHERE coffeeshop_id = 18;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/BvnvhN2Z/coffeemanianext.png'
+WHERE coffeeshop_id = 19;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/8CXzxWbR/coffeemoon.png'
+WHERE coffeeshop_id = 20;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/k4kXgmzD/costacoffee.jpg'
+WHERE coffeeshop_id = 21;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/QC1NBzZm/cozycoffee.png'
+WHERE coffeeshop_id = 22;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/Pfw5FCvD/croque.avif'
+WHERE coffeeshop_id = 23;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/jdYSVRyF/cupcup.jpg'
+WHERE coffeeshop_id = 24;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/tCdCp85C/dejavu.jpg'
+WHERE coffeeshop_id = 25;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/7ZmHT7dF/friends.jpg'
+WHERE coffeeshop_id = 26;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/s2xVPxRv/fuzzy.png'
+WHERE coffeeshop_id = 27;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/XvPnsWVx/gloria.jpg'
+WHERE coffeeshop_id = 28;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/4dhsM0yG/jini.png'
+WHERE coffeeshop_id = 29;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/qqV4dG63/kaffein.png'
+WHERE coffeeshop_id = 30;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/FzymFJ0n/lavazza.jpg'
+WHERE coffeeshop_id = 31;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/fWmMf11j/milklab.png'
+WHERE coffeeshop_id = 32;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/wTzgf0pK/secondcup.png'
+WHERE coffeeshop_id = 33;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/zXk59Kzy/sketchcoffee.png'
+WHERE coffeeshop_id = 34;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/x1TYY88t/socialbee.png'
+WHERE coffeeshop_id = 35;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/htynGn7g/starbucks.jpg'
+WHERE coffeeshop_id = 36;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/rpDk0HS4/storiescoffee.png'
+WHERE coffeeshop_id = 37;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/DzRKqcgM/street9bar.jpg'
+WHERE coffeeshop_id = 38;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/bJbfL2VN/unitedcoffeebeans.png'
+WHERE coffeeshop_id = 39;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/rskXHF7G/whitemind.jpg'
+WHERE coffeeshop_id = 40;
+
+UPDATE c_coffeeshops
+SET logo_url = 'https://i.postimg.cc/sx4dCCRk/zebracoffee.png'
+WHERE coffeeshop_id = 41;
+
+--
+ALTER TABLE c_coffeeshops
+ADD brand_type VARCHAR(20);
+
+UPDATE c_coffeeshops
+SET brand_type = 'Branded'
+WHERE coffeeshop_id IN (9, 21, 28, 31, 33, 36);
+
+UPDATE c_coffeeshops
+SET brand_type = 'Local'
+WHERE brand_type IS NULL;
 
 
+commit;
 
 -- 2. c_branches
 CREATE TABLE c_branches (
@@ -138,86 +318,79 @@ ADD (
     longitude NUMBER(10, 6)
 );
 
+-- Nizami
+UPDATE c_branches
+SET latitude = 40.3793, longitude = 49.8307
+WHERE LOWER(branch) = 'nizami';
+
+-- Elmlar Akademiyası
+UPDATE c_branches
+SET latitude = 40.3750, longitude = 49.8135
+WHERE LOWER(branch) = 'elmlar akademiyası';
 
 -- 28 mall
 UPDATE c_branches
-SET latitude = 40.3777, longitude = 49.8540
+SET latitude = 40.3791, longitude = 49.8469
 WHERE LOWER(branch) = '28 mall';
 
 -- 28-May
 UPDATE c_branches
-SET latitude = 40.3777, longitude = 49.8540
+SET latitude = 40.3799, longitude = 49.8460
 WHERE LOWER(branch) = '28-may';
 
 -- Crescent mall
 UPDATE c_branches
-SET latitude = 40.3748, longitude = 49.8581
+SET latitude = 40.3741, longitude = 49.8604
 WHERE LOWER(branch) = 'crescent mall';
-
-commit;
 
 -- Daniz mall
 UPDATE c_branches
-SET latitude = 40.3593, longitude = 49.8339
+SET latitude = 40.3585, longitude = 49.8370
 WHERE LOWER(branch) = 'daniz mall';
 
--- Elmlar Akademiyasi
+-- Targovy
 UPDATE c_branches
-SET latitude = 40.3745, longitude = 49.8270
-WHERE LOWER(branch) = 'elmlar akademiyası';
+SET latitude = 40.3695, longitude = 49.8398
+WHERE LOWER(branch) = 'targovy';
+
+-- White City
+UPDATE c_branches
+SET latitude = 40.3800, longitude = 49.8888
+WHERE LOWER(branch) = 'white city';
+
+-- Khatai
+UPDATE c_branches
+SET latitude = 40.3833, longitude = 49.8720
+WHERE LOWER(branch) = 'khatai';
 
 -- Ganjlik
 UPDATE c_branches
-SET latitude = 40.3978, longitude = 49.8670
+SET latitude = 40.4007, longitude = 49.8516
 WHERE LOWER(branch) = 'ganjlik';
 
 -- Ganjlik mall
 UPDATE c_branches
-SET latitude = 40.3985, longitude = 49.8663
+SET latitude = 40.4003, longitude = 49.8529
 WHERE LOWER(branch) = 'ganjlik mall';
+
+-- Nariman Narimanov
+UPDATE c_branches
+SET latitude = 40.4026, longitude = 49.8688
+WHERE LOWER(branch) = 'nariman narimanov';
 
 -- Gara Garayev pr.61
 UPDATE c_branches
-SET latitude = 40.4160, longitude = 49.9525
+SET latitude = 40.4118, longitude = 49.9418
 WHERE LOWER(branch) = 'gara garayev pr.61';
 
 -- Hazi Aslanov
 UPDATE c_branches
-SET latitude = 40.3743, longitude = 49.9582
+SET latitude = 40.3732, longitude = 49.9535
 WHERE LOWER(branch) = 'hazi aslanov';
-
--- Khatai
-UPDATE c_branches
-SET latitude = 40.3826, longitude = 49.8752
-WHERE LOWER(branch) = 'khatai';
-
--- Targovy
-UPDATE c_branches
-SET latitude = 40.3723, longitude = 49.8516
-WHERE LOWER(branch) = 'targovy';
-
-
--- Nariman Narimanov
-UPDATE c_branches
-SET latitude = 40.4017, longitude = 49.8671
-WHERE LOWER(branch) = 'nariman narimanov';
-
--- Nizami
-UPDATE c_branches
-SET latitude = 40.3762, longitude = 49.8458
-WHERE LOWER(branch) = 'nizami';
-
--- White City
-UPDATE c_branches
-SET latitude = 40.3759, longitude = 49.8788
-WHERE LOWER(branch) = 'white city';
-
-
 
 
 SELECT * FROM c_branches;
 
-commit;
 
 -- 3. c_branch_performance_sales
 CREATE TABLE c_branch_performance_sales (
@@ -739,7 +912,9 @@ WHERE ROWID NOT IN (
     GROUP BY transaction_date, transaction_time, transaction_qty, branch_id, product_id, isflagwolt, shift, season
 );
 
-
+--
+ALTER TABLE c_transactions
+ADD total_amount AS (transaction_qty * price);
 
 
 -------------------------------
@@ -750,7 +925,7 @@ SELECT * FROM coffeeshop_transactions;
 
 SELECT * FROM c_coffeeshops;
 SELECT * FROM c_branches;
-SELECT * FROM c_branch_performance_sales;
+SELECT * FROM c_branch_performance_sales;   
 SELECT * FROM c_branch_features;
 SELECT * FROM c_coffeeshop_campaigns;
 SELECT * FROM c_products;
@@ -761,7 +936,6 @@ SELECT * FROM c_transactions;
 
 
 commit;
-
 
 -------------------------------
 --DROP TABLE coffeeshop_sales;
@@ -780,3 +954,232 @@ commit;
 --DROP TABLE c_reviews;
 --DROP TABLE c_transactions;
 -------------------------------
+
+-- Top performing coffee shops by average rating
+SELECT 
+    c.coffeeshop_name,
+    AVG(bps.rating) as avg_rating,
+    SUM(bps.review_count) as total_reviews,
+    SUM(bps.excellent_reviews) as excellent_count
+FROM c_branch_performance_sales bps
+JOIN c_branches b ON bps.branch_id = b.branch_id
+JOIN c_coffeeshops c ON b.coffeeshop_id = c.coffeeshop_id
+GROUP BY c.coffeeshop_name
+ORDER BY avg_rating DESC;
+
+-- Daily revenue by shift
+SELECT 
+    t.shift,
+    TO_CHAR(t.transaction_date, 'DAY') as day_of_week,
+    SUM(t.total_amount) as total_revenue,
+    COUNT(t.transaction_id) as transaction_count
+FROM c_transactions t
+GROUP BY t.shift, TO_CHAR(t.transaction_date, 'DAY')
+ORDER BY total_revenue DESC;
+
+-- Product popularity and revenue
+SELECT 
+    p.product_name,
+    COUNT(t.transaction_id) as sales_count,
+    SUM(t.total_amount) as total_revenue,
+    AVG(t.price) as avg_price
+FROM c_transactions t
+JOIN c_products p ON t.product_id = p.product_id
+GROUP BY p.product_name
+ORDER BY total_revenue DESC;
+
+-- Seasonal sales patterns
+SELECT 
+    c.coffeeshop_name,
+    t.season,
+    COUNT(t.transaction_id) as transaction_count,
+    SUM(t.total_amount) as total_revenue,
+    AVG(t.total_amount) as avg_transaction_value
+FROM c_transactions t
+JOIN c_branches b ON t.branch_id = b.branch_id
+JOIN c_coffeeshops c ON b.coffeeshop_id = c.coffeeshop_id
+GROUP BY c.coffeeshop_name, t.season
+ORDER BY c.coffeeshop_name, 
+    CASE t.season 
+        WHEN 'winter' THEN 1 
+        WHEN 'spring' THEN 2 
+        WHEN 'summer' THEN 3 
+        WHEN 'autumn' THEN 4 
+    END;
+
+-- Product seasonality
+SELECT 
+    p.product_name,
+    t.season,
+    COUNT(t.transaction_id) as sales_count,
+    ROUND(COUNT(t.transaction_id) * 100.0 / SUM(COUNT(t.transaction_id)) OVER (PARTITION BY p.product_name), 2) as percentage
+FROM c_transactions t
+JOIN c_products p ON t.product_id = p.product_id
+GROUP BY p.product_name, t.season
+ORDER BY p.product_name, 
+    CASE t.season 
+        WHEN 'winter' THEN 1 
+        WHEN 'spring' THEN 2 
+        WHEN 'summer' THEN 3 
+        WHEN 'autumn' THEN 4 
+    END;
+    
+    
+
+-- Ən çox gəlir gətirən şöbələr
+SELECT 
+    b.branch_name,
+    c.coffeeshop_name,
+    SUM(t.total_amount) AS total_revenue,
+    COUNT(t.transaction_id) AS transaction_count,
+    AVG(t.total_amount) AS avg_transaction_value
+FROM c_transactions t
+JOIN c_branches b ON t.branch_id = b.branch_id
+JOIN c_coffeeshops c ON b.coffeeshop_id = c.coffeeshop_id
+GROUP BY b.branch_name, c.coffeeshop_name
+ORDER BY total_revenue DESC
+FETCH FIRST 10 ROWS ONLY;
+
+-- Reytinqlərin vaxt üzrə dəyişimi
+SELECT 
+    c.coffeeshop_name,
+    COUNT(*) AS review_count,
+    AVG(r.rating) AS avg_rating
+FROM c_reviews r
+JOIN c_coffeeshops c ON r.coffeeshop_id = c.coffeeshop_id
+GROUP BY c.coffeeshop_name
+ORDER BY c.coffeeshop_name;
+
+-- Aylıq satış proqnozları (tarixi məlumatlara əsasən)
+SELECT 
+    c.coffeeshop_name,
+    EXTRACT(MONTH FROM t.transaction_date) AS month,
+    EXTRACT(YEAR FROM t.transaction_date) AS year,
+    SUM(t.total_amount) AS monthly_revenue,
+    COUNT(t.transaction_id) AS transaction_count,
+    ROUND(SUM(t.total_amount)/COUNT(DISTINCT EXTRACT(DAY FROM t.transaction_date)), 2) AS avg_daily_revenue
+FROM c_transactions t
+JOIN c_branches b ON t.branch_id = b.branch_id
+JOIN c_coffeeshops c ON b.coffeeshop_id = c.coffeeshop_id
+GROUP BY c.coffeeshop_name, EXTRACT(MONTH FROM t.transaction_date), EXTRACT(YEAR FROM t.transaction_date)
+ORDER BY c.coffeeshop_name, year, month;
+
+-- Fəsillər üzrə büdcə paylanması tövsiyələri
+SELECT 
+    c.coffeeshop_name,
+    t.season,
+    SUM(t.total_amount) AS seasonal_revenue,
+    ROUND(SUM(t.total_amount)*100.0/SUM(SUM(t.total_amount)) OVER (PARTITION BY c.coffeeshop_name), 2) AS revenue_percentage,
+    AVG(bps.rating) AS avg_seasonal_rating
+FROM c_transactions t
+JOIN c_branches b ON t.branch_id = b.branch_id
+JOIN c_coffeeshops c ON b.coffeeshop_id = c.coffeeshop_id
+JOIN c_branch_performance_sales bps ON b.branch_id = bps.branch_id
+GROUP BY c.coffeeshop_name, t.season
+ORDER BY c.coffeeshop_name, 
+    CASE t.season
+        WHEN 'winter' THEN 1
+        WHEN 'spring' THEN 2
+        WHEN 'summer' THEN 3
+        WHEN 'autumn' THEN 4
+    END;
+    
+    
+
+SELECT 
+    branch_id,
+    COUNT(*) AS total_transactions,
+    SUM(transaction_qty) AS total_quantity
+FROM 
+    c_transactions
+WHERE 
+    EXTRACT(YEAR FROM transaction_date) = 2024
+    AND EXTRACT(MONTH FROM transaction_date) = 7
+GROUP BY 
+    branch_id
+ORDER BY 
+    total_quantity DESC;
+
+
+
+
+-- Hər Bir Qəhvəxana Üzrə Orta Qiymət
+SELECT
+    c.coffeeshop_name,
+    AVG(t.price) AS average_price
+FROM
+    c_coffeeshops c
+JOIN
+    c_transactions t ON c.coffeeshop_id = (SELECT b.coffeeshop_id FROM c_branches b WHERE b.branch_id = t.branch_id)
+GROUP BY
+    c.coffeeshop_name;
+    
+    
+-- Ən Çox Satılan Məhsullar (Bütün Filiallar Üzrə): Total quantity sold
+SELECT
+    p.product_name,
+    SUM(t.transaction_qty) AS total_quantity_sold
+FROM
+    c_products p
+JOIN
+    c_transactions t ON p.product_id = t.product_id
+GROUP BY
+    p.product_name
+ORDER BY
+    total_quantity_sold DESC;
+    
+    
+    
+-- Ən Çox Satılan Məhsullar (Bütün Filiallar Üzrə): Total sales
+SELECT
+    p.product_name,
+    SUM(t.transaction_qty) AS total_sales
+FROM
+    c_transactions t
+JOIN
+    c_products p ON t.product_id = p.product_id
+GROUP BY
+    p.product_name
+ORDER BY
+    p.product_name;
+    
+    
+    
+-- Reytinqi 4-dən yuxarı olan filialların adlarını tapmaq:
+SELECT
+    b.branch_name
+FROM
+    c_branches b
+WHERE
+    b.branch_id IN (SELECT branch_id FROM c_branch_performance_sales WHERE rating > 4);
+    
+    
+-- Orta satış sayından daha çox satan filialları tapmaq:
+SELECT
+    b.branch_name
+FROM
+    c_branches b
+WHERE
+    b.branch_id IN (
+        SELECT
+            t.branch_id
+        FROM
+            c_transactions t
+        GROUP BY
+            t.branch_id
+        HAVING
+            SUM(t.transaction_qty) > (SELECT AVG(total_qty) FROM (SELECT SUM(transaction_qty) AS total_qty FROM c_transactions GROUP BY branch_id))
+    );
+    
+    
+    
+
+
+
+
+-- SQL sorğusu ilə anomalyaları tapın
+SELECT product_name, price 
+FROM c_product_prices
+JOIN c_products ON c_product_prices.product_id = c_products.product_id
+WHERE price > 5; -- Normal kofe qiymətləri üçün maksimum threshold təyin edin
+
